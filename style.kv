@@ -1,0 +1,41 @@
+
+<Style>:
+    # result:result
+    word:word
+
+    MDScreenManager:
+        id:mn 
+# ///////MAIN///////
+        MDScreen:
+            name:'main'
+            MDScreen:
+                MDAnchorLayout:
+                    anchor_x:'center'
+                    anchor_y:'center'
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.7, 0.1
+                        spacing:21
+                        MDTextField:
+                            id:word
+                            mode:'round'
+                            helper_text:' Start Search : '
+                        MDAnchorLayout:
+                            anchor_x:'center'
+                            anchor_y:'center'
+                            MDFillRoundFlatButton:
+                                size_hint:0.2,0.1
+                                text:'OK'
+                                on_press:root.search()
+    MDScreen:
+        MDAnchorLayout:
+            anchor_x:'center'
+            anchor_y:'top'
+            MDScrollView:
+                size_hint:0.6,0.3
+                MDList:
+                    id:result
+# //////FAKE//////////
+        MDScreen:
+            name:'fake'
+
